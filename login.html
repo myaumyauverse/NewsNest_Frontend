@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - NewsNest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page"> <!-- Add a unique class to target this page -->
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">NEWSNEST</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="savedposts.html">Saved Posts</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Login Form Section -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form class="login-form">
+        <input type="text" placeholder="Username" class="input-field" required>
+        <input type="password" placeholder="Password" class="input-field" required>
+        <button type="submit" class="login-btn">Log In</button>
+      </form>
+      <div class="divider">OR</div>
+      <button class="signup-btn">Sign Up</button>
+      <a href="#" class="forgot-password">Forgot Password?</a>
+
+      <!-- Social Media Login Buttons -->
+      <div class="social-login">
+        <!-- Apple Login Button -->
+        <button class="social-btn apple-btn">
+          <img src="images/apple-logo.png" alt="Apple Logo" class="social-icon"> 
+          Login with Apple
+        </button>
+
+        <!-- Facebook Login Button -->
+        <button class="social-btn facebook-btn">
+          <img src="images/facebook-logo.png" alt="Facebook Logo" class="social-icon"> 
+          Login with Facebook
+        </button>
+
+        <!-- Google Login Button -->
+        <button class="social-btn google-btn">
+          <img src="images/google-logo.png" alt="Google Logo" class="social-icon">
+          Login with Google
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple JavaScript to toggle between Login and Signup
+    const signupBtn = document.querySelector('.signup-btn');
+    const loginBox = document.querySelector('.login-box');
+    const formTitle = loginBox.querySelector('h2');
+
+    signupBtn.addEventListener('click', () => {
+      if (formTitle.textContent === 'Login') {
+        formTitle.textContent = 'Sign Up';
+        signupBtn.textContent = 'Already have an account? Log in';
+        document.querySelector('.login-btn').textContent = 'Sign Up';
+      } else {
+        formTitle.textContent = 'Login';
+        signupBtn.textContent = 'Sign Up';
+        document.querySelector('.login-btn').textContent = 'Log In';
+      }
+    });
+  </script>
+</body>
+</html>
