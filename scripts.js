@@ -1,4 +1,4 @@
-const apiKey = '3cb831ba482e4b6b9261344af8d83022'; // Replace with your own NewsAPI key
+const apiKey = 'myAPI_key'; // Replace with your own NewsAPI key
 
 // Function to fetch news based on category
 const loadNews = (category = 'technology') => {
