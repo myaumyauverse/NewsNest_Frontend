@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Posts - NewsNest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">NEWSNEST</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="savedposts.html">Saved Posts</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Your Saved Posts</h1>
+    <div class="flash-cards" id="saved-posts">
+      <!-- Saved posts will be dynamically added here -->
+    </div>
+  </div>
+
+  <script>
+    // Load saved posts from localStorage
+    const loadSavedPosts = () => {
+      const savedPostsContainer = document.getElementById('saved-posts');
+      const savedPosts = JSON.parse(localStorage.getItem('savedPosts')) || [];
+
+      if (savedPosts.length === 0) {
+        savedPostsContainer.innerHTML = '<p>No saved posts found.</p>';
+        return;
+      }
+
+      savedPostsContainer.innerHTML = '';
+      savedPosts.forEach((post, index) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        card.innerHTML = `
+          <img src="${post.image}" alt="${post.title}" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">${post.title}</h3>
+            <p class="card-description">${post.description}</p>
+            <a href="${post.url}" class="card-link" target="_blank">Read more</a>
+            <button class="remove-btn" onclick="removePost(${index})">Remove Post</button>
+          </div>
+        `;
+
+        savedPostsContainer.appendChild(card);
+      });
+    };
+
+    // Remove a post from localStorage
+    const removePost = (index) => {
+      const savedPosts = JSON.parse(localStorage.getItem('savedPosts')) || [];
+      savedPosts.splice(index, 1); // Remove the selected post
+      localStorage.setItem('savedPosts', JSON.stringify(savedPosts)); // Update localStorage
+      loadSavedPosts(); // Reload the saved posts
+    };
+
+    // Load saved posts on page load
+    window.onload = loadSavedPosts;
+  </script>
+</body>
+</html>

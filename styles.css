@@ -1,0 +1,398 @@
+/* General Styling */
+body {
+  background: linear-gradient(135deg, #3a3d5c, #1e2236); /* Professional dark gradient background */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Loading Message Styling */
+.loading-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Navbar Styling (unchanged) */
+.navbar {
+  width: 100%;
+  background-color: #2e3348;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+/* Navigation Link Styling */
+.navbar .nav-links li {
+  display: inline-block;
+}
+
+.navbar .nav-links li a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+  color: #6a76f0;
+}
+
+/* Main Content Styling */
+.content {
+  text-align: center;
+  margin-top: 80px; /* Adjust to push content below navbar */
+  padding: 20px;
+}
+
+/* Categories Section Styling */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.category-btn {
+  background-color: #6a76f0;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.category-btn:hover {
+  background-color: #505cff;
+  transform: scale(1.05); /* Subtle hover effect */
+}
+
+.category-btn:focus {
+  outline: none;
+}
+
+/* save this post button */
+.save-btn {
+  background: none; /* No background */
+  border: none; /* Remove border */
+  padding: 0;
+  cursor: pointer; /* Pointer cursor */
+  margin-top: 10px;
+}
+
+.save-btn img {
+  width: 24px; /* Icon size */
+  height: 24px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.save-btn img:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  filter: brightness(0.8); /* Darken the icon slightly */
+}
+
+
+
+
+/* remove this post button */
+.remove-btn {
+  background-color: #ff6b6b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.remove-btn:hover {
+  background-color: #ff4c4c;
+}
+
+
+/* Flash Cards Section Styling */
+.flash-cards {
+  display: flex;
+  flex-wrap: wrap; /* Ensures cards wrap properly on small screens */
+  justify-content: space-between; /* Space cards evenly */
+  gap: 15px; /* Reduced gap for better fit */
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1400px; /* Increased width to allow wider cards */
+}
+
+.card {
+  background-color: #404761;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 1 1 calc(25% - 15px); /* Wider cards with a larger percentage */
+  max-width: calc(25% - 15px); /* Consistent width for each card */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-img {
+  width: 100%;
+  height: 150px; /* Reduced height for a more proportional look */
+  object-fit: cover; /* Ensures the image maintains its aspect ratio */
+}
+
+.card-body {
+  padding: 20px; /* Slightly more padding for wider cards */
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #b3b3c2;
+  margin-bottom: 12px;
+}
+
+.card-link {
+  font-size: 16px;
+  color: #6a76f0;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 45%; /* Two cards per row on smaller screens */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%; /* Full width cards on extra small screens */
+    max-width: 100%;
+  }
+}
+
+
+
+
+/* General Styling for Login Page */
+body.login-page {
+  background: linear-gradient(135deg, #3a3d5c, #1e2236); /* Dark gradient background */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login Container */
+body.login-page .login-container {
+  width: 100%;
+  max-width: 400px; /* Form width */
+  padding: 40px; /* Add padding to the container */
+  background: #2e3348; /* Dark background for the form */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  margin-top: 50px; /* Space from the top */
+}
+
+/* Heading */
+body.login-page .login-container h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input Fields */
+body.login-page .input-field {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #444c67;
+  border-radius: 8px;
+  background-color: #404761;
+  color: #ffffff;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+/* Input Fields Focus */
+body.login-page .input-field:focus {
+  border-color: #6a76f0;
+  outline: none;
+}
+
+/* Login Button */
+body.login-page .login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #6a76f0;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.login-page .login-btn:hover {
+  background-color: #505cff;
+}
+
+/* Divider (OR) */
+body.login-page .divider {
+  margin: 20px 0;
+  color: #b3b3c2;
+  font-size: 14px;
+}
+
+/* Sign Up Button */
+body.login-page .signup-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #f1f1f1;
+  color: #6a76f0;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.login-page .signup-btn:hover {
+  background-color: #e2e2e2;
+}
+
+/* Forgot Password Link */
+body.login-page .forgot-password {
+  font-size: 14px;
+  color: #6a76f0;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+body.login-page .forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Social Login Buttons */
+body.login-page .social-login {
+  margin-top: 20px;
+}
+
+body.login-page .social-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+body.login-page .social-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Apple Button */
+body.login-page .apple-btn {
+  background-color: #333; /* Apple dark background */
+  color: white;
+}
+
+body.login-page .apple-btn:hover {
+  background-color: #222;
+}
+
+/* Facebook Button */
+body.login-page .facebook-btn {
+  background-color: #3b5998; /* Facebook blue */
+  color: white;
+}
+
+body.login-page .facebook-btn:hover {
+  background-color: #365899;
+}
+
+/* Google Button */
+body.login-page .google-btn {
+  background-color: #db4437; /* Google red */
+  color: white;
+}
+
+body.login-page .google-btn:hover {
+  background-color: #c1351d;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  body.login-page .login-container {
+    max-width: 90%; /* Make login form more flexible on mobile */
+  }
+}

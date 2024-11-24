@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage - NewsNest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">NEWSNEST</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="savedposts.html">Saved Posts</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content of Homepage -->
+  <div class="content">
+    <h1>Welcome to NewsNest</h1>
+    <p>Explore the latest news and trends.</p>
+    <p>Login to access your saved posts or sign up to get started.</p>
+  </div>
+
+  <!-- News Categories -->
+  <div class="categories">
+    <button class="category-btn" onclick="loadNews('technology')">Technology</button>
+    <button class="category-btn" onclick="loadNews('sports')">Sports</button>
+    <button class="category-btn" onclick="loadNews('health')">Health</button>
+    <button class="category-btn" onclick="loadNews('business')">Business</button>
+  </div>
+
+  <!-- Flash Cards Section -->
+  <div class="flash-cards">
+    <!-- Cards will be dynamically added here by JavaScript -->
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
